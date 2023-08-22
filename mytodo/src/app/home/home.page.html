@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      GÖREVLERİM
+    </ion-title>
+<ion-buttons slot="start">
+  <ion-button (click)="userInfo()">
+    <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+  </ion-button>
+</ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="end" name="log-out-outline"></ion-icon>
+        Çıkış
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let task of tasks" (click)="showDetail(task)">
+      <ion-label>{{task.task}}</ion-label>
+    </ion-item>
+  </ion-list>
+  
+  <!--<ion-button (click)="newTask()" expand="block" fill="clear" shape="round">
+    Add New Task
+  </ion-button>-->
+
+ <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="presentAlert()">
+    <ion-icon name="add-circle-outline"></ion-icon>
+  </ion-fab-button>
+ </ion-fab>
+
+
+</ion-content>

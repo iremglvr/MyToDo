@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title *ngIf="task">{{task.task}}</ion-title>
+    <ion-button (click)="close()" slot="end" shape="round">
+      <ion-icon slot="" name="backspace-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    
+  
+<div *ngIf="task">
+<ion-item>
+  <ion-input [(ngModel)]="task.task" label="Başlık" labelPlacement="stacked"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-input [(ngModel)]="task.date" label="Başlangıç Tarihi" labelPlacement="stacked"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-input [(ngModel)]="task.taskdetail" label="Görev" labelPlacement="stacked"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-input [(ngModel)]="task.lastDt" label="bitiş tarihi" labelPlacement="stacked"></ion-input>
+</ion-item>
+
+</div>
+</ion-card>
+<ion-card>
+<ion-button (click)="update()" expand="full"  shape="round" color="success">
+  <ion-icon name="arrow-up-circle-outline"></ion-icon>
+  Güncelle
+</ion-button>
+
+<ion-button (click)="del()" expand="full"  shape="round" color="danger">
+  <ion-icon name="trash-outline"></ion-icon>
+  Sil
+</ion-button>
+</ion-card>
+
+
+</ion-content>

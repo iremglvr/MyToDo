@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Kayıt Ol</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <ion-card>
+      <ion-item>
+        <ion-input [(ngModel)]="userData.name" type="text" label="Ad-Soyad" labelPlacement="floating"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input [(ngModel)]="userData.username" type="text" label="Kullanıcı adı" labelPlacement="floating"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input [(ngModel)]="userData.email" type="text" label="E-posta" labelPlacement="floating"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input [(ngModel)]="userData.password" type="text" label="Şifre" labelPlacement="floating"></ion-input>
+      </ion-item>
+      
+    </ion-card>
+      <div>
+      <ion-button (click)="signin()" expand="block" shape="solid" >
+        <ion-icon slot="start" name="star"></ion-icon>
+        Kayıt Ol
+      </ion-button>
+
+      <ion-button expand="block" fill="clear" size="small" color="dark" [routerLink]="['/login']" >
+        Giriş yapmak için tıklayınız. 
+        </ion-button>
+    </div>
+  </div>
+</ion-content>

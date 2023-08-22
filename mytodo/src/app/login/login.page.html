@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Giriş Yap</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <ion-card>
+      <ion-item>
+        <ion-input [(ngModel)]="userData.email" type="text" label="E-posta" labelPlacement="floating"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input [(ngModel)]="userData.password" type="text" label="Şifre" labelPlacement="floating"></ion-input>
+      </ion-item>
+      
+    </ion-card>
+      <div>
+      <ion-button (click)="login()" expand="full" shape="round" color="success">
+        <ion-icon slot="start" name="log-in-outline"></ion-icon>
+        Giriş Yap
+      </ion-button>
+      
+      <ion-button expand="block" fill="clear" size="small" color="dark" [routerLink]="['/register']" >
+        Kayıt olmak için tıklayınız.  
+        </ion-button>
+    </div>
+  </div>
+</ion-content>
+
